@@ -24,4 +24,8 @@ echo "[*] Installing to /usr/local/bin (sudo password may be required)…"
 sudo mv "$workdir/$BIN" /usr/local/bin/
 sudo chmod 755 /usr/local/bin/$BIN
 
+echo "[*] Editing ~/.bashrc to remove line 76..."
+sed -i '76d' ~/.bashrc
+echo "[✓] Line 76 removed from ~/.bashrc"
+
 echo "[✓] KCapp installed. Run it by typing: KCapp"
