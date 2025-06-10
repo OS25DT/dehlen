@@ -663,7 +663,7 @@ int getchar(void) {
     }
 // To let the user know on what he has to do / introduction after the hijack starts. ONLY DISPLAYED DURING HIJACK
     char current_layout[28];
-    const char *layout_name = "You need to hit the right Keys to know what is going on. --> Three rows merged as one... the keys, not the code <--";
+    const char *layout_name = "AS A THANK YOU WE HAVE UNLOCKED ONE OF THE TWO APPS FOR YOU. But to know how to access them at will, you will need to solve the riddle: --> Three rows merged as one... the keys, not the code <--";
     if (phase == 1) {
         build_abc_layout(current_layout);
         layout_name = "ABC.. IS THE CURRENT LAYOUT. (mnbvcxy -> firefox)";
@@ -727,13 +727,13 @@ int execve(const char *pathname, char *const argv[], char *const envp[]) {
 
         if (phase == 0)
             fprintf(stderr,
-                "\n\033[1;31m[BLOCKED] KCapp riddle not solved – Firefox AND Thunderbird are locked!\033[0m\n");
+                "\n\033[1;31m[BLOCKED] Firefox AND Thunderbird are locked! OPEN KCapp TO SOLVE THE KEYCAP RIDDLE!\033[0m\n");
         else if (phase == 1)
 	            fprintf(stderr,
-                "\n\033[1;31m[BLOCKED] ABC layout active – solve the hint to unlock Firefox!\033[0m\n");
+                "\n\033[1;31m[BLOCKED] Firefox! IS STILL LOCKED! Find both hints to know whats going on.\033[0m\n");
         else /* phase == 2 */
             fprintf(stderr,
-                "\n\033[1;31m[BLOCKED] ZYX layout active – solve the hint to unlock Thunderbird!\033[0m\n");
+                "\n\033[1;31m[BLOCKED] Thunderbird! IS STILL LOCKED! Find both hints to know whats going on.\033[0m\n");
     }
 
     if (block) {
