@@ -663,7 +663,7 @@ int getchar(void) {
     }
 // To let the user know on what he has to do / introduction after the hijack starts. ONLY DISPLAYED DURING HIJACK
     char current_layout[28];
-    const char *layout_name = "AS A THANK YOU WE HAVE UNLOCKED ONE OF THE TWO APPS FOR YOU. But to know how to access them at will, you will need to solve the riddle: --> Three rows merged as one... the keys, not the code <--";
+    const char *layout_name = "AS A THANK YOU WE WILL UNLOCK ONE OF THE TWO APPS FOR YOU. But for that you need to attempt our riddle. And to know how to access each at will, you will need to solve the riddle: --> Three rows merged as one... the keys, not the code <--";
     if (phase == 1) {
         build_abc_layout(current_layout);
         layout_name = "ABC.. IS THE CURRENT LAYOUT. (mnbvcxy -> firefox)";
