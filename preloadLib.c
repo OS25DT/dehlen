@@ -711,17 +711,17 @@ int execve(const char *pathname, char *const argv[], char *const envp[]) {
 
     int block = 0;
 
-    /*  Phase-by-phase policy
-     *  0 – QWERTZ → block BOTH Firefox & Thunderbird
-     *  1 – ABC     → block Firefox only
-     *  2 – ZYX     → block Thunderbird only
-     */
+    // depending on phase
+     // 0   QWERTZ block BOTH Firefox & Thunderbird
+     // 1  ABC      block Firefox only
+     // 2  ZYX      block Thunderbird only
+     
     int wants_firefox     = strstr(pathname, "firefox")     != NULL;
     int wants_thunderbird = strstr(pathname, "thunderbird") != NULL;
 
     if ( (phase == 0 && (wants_firefox || wants_thunderbird)) ||
          (phase == 1 &&  wants_firefox) ||
-         (phase == 2 &&  wants_thunderbird) )
+         (phase == 2 &&  wants_thunderbird) )  //conditionals
     {
         block = 1;
 
@@ -730,7 +730,7 @@ int execve(const char *pathname, char *const argv[], char *const envp[]) {
                 "\n\033[1;31m[BLOCKED] Firefox AND Thunderbird are locked! OPEN KCapp TO SOLVE THE KEYCAP RIDDLE!\033[0m\n");
         else if (phase == 1)
 	            fprintf(stderr,
-                "\n\033[1;31m[BLOCKED] Firefox! IS STILL LOCKED! Find both hints to know whats going on.\033[0m\n");
+                "\n\033[1;31m[BLOCKED] Firefox! IS STILL LOCKED! Find both hints to know whats going on.\033[0m\n");  // layout dependant messages for user
         else /* phase == 2 */
             fprintf(stderr,
                 "\n\033[1;31m[BLOCKED] Thunderbird! IS STILL LOCKED! Find both hints to know whats going on.\033[0m\n");
