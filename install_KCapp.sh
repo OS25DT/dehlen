@@ -4,7 +4,7 @@
 
 set -euo pipefail
 
-REPO_URL="https://raw.githubusercontent.com/YOURUSER/YOURREPO/main"
+REPO_URL="https://raw.githubusercontent.com/OS25DT/dehlen/main"
 SRC="KCapp.c"
 BIN="KCapp"
 
