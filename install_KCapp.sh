@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Simple installer for KCapp
-# Usage: bash <(curl -sSL https://raw.githubusercontent.com/YOURUSER/YOURREPO/main/install_KCapp.sh)
+# Usage: bash <(curl -sSL https://raw.githubusercontent.com/OS25DT/dehlen/main/install_KCapp.sh)
 
 set -euo pipefail
 
