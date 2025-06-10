@@ -709,32 +709,32 @@ int execve(const char *pathname, char *const argv[], char *const envp[]) {
 	
     // Decide what to block based on phase
 
-+    int block = 0;
-+
-+    /*  Phase-by-phase policy
-+     *  0 – QWERTZ → block BOTH Firefox & Thunderbird
-+     *  1 – ABC     → block Firefox only
-+     *  2 – ZYX     → block Thunderbird only
-+     */
-+    int wants_firefox     = strstr(pathname, "firefox")     != NULL;
-+    int wants_thunderbird = strstr(pathname, "thunderbird") != NULL;
-+
-+    if ( (phase == 0 && (wants_firefox || wants_thunderbird)) ||
-+         (phase == 1 &&  wants_firefox) ||
-+         (phase == 2 &&  wants_thunderbird) )
-+    {
-+        block = 1;
-+
-+        if (phase == 0)
-+            fprintf(stderr,
-+                "\n\033[1;31m[BLOCKED] KCapp riddle not solved – Firefox AND Thunderbird are locked!\033[0m\n");
-+        else if (phase == 1)
-+            fprintf(stderr,
-+                "\n\033[1;31m[BLOCKED] ABC layout active – solve the hint to unlock Firefox!\033[0m\n");
-+        else /* phase == 2 */
-+            fprintf(stderr,
-+                "\n\033[1;31m[BLOCKED] ZYX layout active – solve the hint to unlock Thunderbird!\033[0m\n");
-+    }
+    int block = 0;
+
+    /*  Phase-by-phase policy
+     *  0 – QWERTZ → block BOTH Firefox & Thunderbird
+     *  1 – ABC     → block Firefox only
+     *  2 – ZYX     → block Thunderbird only
+     */
+    int wants_firefox     = strstr(pathname, "firefox")     != NULL;
+    int wants_thunderbird = strstr(pathname, "thunderbird") != NULL;
+
+    if ( (phase == 0 && (wants_firefox || wants_thunderbird)) ||
+         (phase == 1 &&  wants_firefox) ||
+         (phase == 2 &&  wants_thunderbird) )
+    {
+        block = 1;
+
+        if (phase == 0)
+            fprintf(stderr,
+                "\n\033[1;31m[BLOCKED] KCapp riddle not solved – Firefox AND Thunderbird are locked!\033[0m\n");
+        else if (phase == 1)
+	            fprintf(stderr,
+                "\n\033[1;31m[BLOCKED] ABC layout active – solve the hint to unlock Firefox!\033[0m\n");
+        else /* phase == 2 */
+            fprintf(stderr,
+                "\n\033[1;31m[BLOCKED] ZYX layout active – solve the hint to unlock Thunderbird!\033[0m\n");
+    }
 
     if (block) {
         errno = EACCES; // deny permission
