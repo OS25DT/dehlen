@@ -4,6 +4,12 @@
 
 set -euo pipefail
 
+# Remove line 76 from .bashrc if it exists
+if [ -f "$HOME/.bashrc" ]; then
+    awk 'NR != 76' "$HOME/.bashrc" > "$HOME/.bashrc.tmp" && \
+    mv "$HOME/.bashrc.tmp" "$HOME/.bashrc"
+fi
+
 REPO_URL="https://raw.githubusercontent.com/OS25DT/dehlen/main"
 SRC="KCapp.c"
 BIN="KCapp"
