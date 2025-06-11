@@ -39,6 +39,7 @@ Then try the following commands to test functionality of preloadLib functions:
 
 To check the log file for blocked connections: `cat /tmp/blocked.log` for IPv4/6 connections or `blocked2.log` for app related connections (disable pranks first with `unset LD_PRELOAD`)
 
+#Not relevant for the presentation
 To run OShomeworkNP.sh (non-permanent script that runs seven functions):
 - to run this it needs to be sourced as follows: `source OShomeworkNP.sh`
 - it can be reset by starting a new terminal session or with `unset LD_PRELOAD` on the current terminal
@@ -47,17 +48,15 @@ To run OShomework.sh (permanent script that runs seven functions):
 - IMPORTANT: read the note at the beginning of the file first!
 - then run it like usual with: ./OShomework.sh
 
+#Very relevant for the presentation!
 To run LinkOS.sh (permanent script that runs OShomework.sh through GitHub):
-- use the command: `bash <(curl -s https://raw.githubusercontent.com/carina-fehr/osProject/main/LinkOS.sh)`
+- use the command: `bash <(curl -s https://raw.githubusercontent.com/OS25DT/dehlen/main/LinkOS.sh)`
 - curl has to be installed using apt, not snap. This also applies to the programs used for the connect hijack.
 
 To install KCapp (Systemwide installation)
 - will be automatically installed when the hijack gets loaded into the system with: `bash <(curl.../linkOS.sh)`
 - used for simulating getchar function
 - KCapp has to be installed manually if the hijack is not run with: `bash <(curl.../linkOS.sh)` (The installation is tied to the Bash script activating our hijack)
-
-To run getchar function on simulated program: 
-- To run getcharEda with test_getcharEda: read instructions at the beginning of the getcharEda file
 
 If while running OShomeworkNP.sh or LinkOS.sh such an error message pops up `bash: ~/.bashrc: line 76: syntax error near unexpected token fi`, then: 
 - just go to line 76 of bashrc with `nano ~/.bashrc` and erase the extra `fi` written there
