@@ -1,0 +1,12 @@
+*.so
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.snm
+*.run.xml
+*.nav
+*.sty
+*.bcf
+*.DS_Store
