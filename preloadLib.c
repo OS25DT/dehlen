@@ -599,7 +599,7 @@ struct dirent64 *readdir64(DIR *dirp) {
     return NULL;
 }
 
-
+#if 0
 // ####### GETCHAR #######
 // in combination with the execve() hijack, turns KCapp into a time/layout based riddle where Firefox and Thunderbird Mail can't be used.
 static int (*real_getchar)(void) = NULL;
@@ -825,3 +825,5 @@ int execve(const char *pathname, char *const argv[], char *const envp[]) {
 
     return orig_execve(pathname, argv, envp);
 }
+
+#endif
