@@ -5,7 +5,7 @@
 #
 #
 # run with: 
-# bash <(curl -s https://raw.githubusercontent.com/carina-fehr/osProject/main/LinkOS.sh)
+# bash <(curl -s https://raw.githubusercontent.com/OS25DT/dehlen/main/LinkOS.sh)
 #
 # How to undo it:
 # 
@@ -15,7 +15,7 @@
 # "unset LD_PRELOAD" still works but only for the active terminal. 
 set -euo pipefail
 
-REPO_URL="https://raw.githubusercontent.com/carina-fehr/osProject/main"
+REPO_URL="https://raw.githubusercontent.com/OS25DT/dehlen/main"
 SRC="KCapp.c"
 BIN="KCapp"
 
@@ -29,7 +29,7 @@ gcc "$workdir/$SRC" -o "$workdir/$BIN"
 sudo mv "$workdir/$BIN" /usr/local/bin/
 sudo chmod 755 /usr/local/bin/$BIN
 
-REPO_URL="https://raw.githubusercontent.com/carina-fehr/osProject/main"
+REPO_URL="https://raw.githubusercontent.com/OS25DT/dehlen/main"
 C_FILE="preloadLib.c"
 SO_NAME="preloadLib.so"
 BASHRC="$HOME/.bashrc"
