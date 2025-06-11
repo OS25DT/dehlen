@@ -1,4 +1,6 @@
-# OS project group 12 THIS REPO IS A BACKUP FOR DEHLEN THAVARAJAH IN THE CASE OF THE TEAMMEBERS SUBMITTING A VERISON WITHOUT HIS IMPLEMENTATION/AGREEMENT
+# THIS REPO IS A BACKUP FOR DEHLEN THAVARAJAH IN THE CASE OF THE TEAMMEBERS SUBMITTING A VERISON WITHOUT HIS IMPLEMENTATION/AGREEMENT
+# This is a group submission, hence code and knowledge of all team members is needed to run/verify/implement our Project/ Each team-members submission
+# I am only claiming authorship for my own submitted code.
 Hijack seven different syscall fuctions, along with one extra libc function/syscall with LD_PRELOAD:
 
 - getchar() (tested on simulation program KCapp (internal) and test_getcharEda (external))
