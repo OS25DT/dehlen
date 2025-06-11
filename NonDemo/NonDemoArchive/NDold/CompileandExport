@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#This script helps you run and execute the neede Library 
+#
+# ussage 
+# . ./CompileandExport NameOfFileToExecute
+nameOfFile=$1
+nameOfFile="${nameOfFile%%.*}"
+
+unset LD_PRELOAD
+
+gcc -shared -fPIC -o $nameOfFile.so $nameOfFile.c -ldl
+
+export LD_PRELOAD=./$nameOfFile.so
